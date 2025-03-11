@@ -1,7 +1,7 @@
 title: Your Site Name
 description: A brief description of your site
 baseurl: "" # You can leave this empty or set it to your repository name for GitHub Pages
-url: "https://yourusername.github.io" # Your GitHub Pages URL
+url: "jczy3.github.io" # Your GitHub Pages URL
 
 markdown: kramdown
 theme: jekyll-theme-cayman # Or any other theme you are using
