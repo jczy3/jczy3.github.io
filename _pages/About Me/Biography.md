@@ -5,7 +5,7 @@ tags: [Embedded Systems, C/C++, Real-Time Systems, Firmware, Low-Level Programmi
 thumbnail: assets/img/joseph.JPG
 ---
 # Hello, I'm Joseph Caraan
-- [Link to Resume](https://drive.google.com/file/d/142xJGMz2l8p7ndxxjNEzfHGYxuEutA2n/view?usp=sharing)
+- [My Resume](https://drive.google.com/file/d/142xJGMz2l8p7ndxxjNEzfHGYxuEutA2n/view?usp=sharing)
 
 I’m Joseph Caraan, a Computer Engineering student at UC Riverside. My main focus is in embedded software and low-level systems, and I’m actively growing my skills in RTOS-based development, and real-time system design. I’m especially drawn to projects where firmware interacts directly with hardware and where performance, reliability, and validation in real-world environments truly matter.
 
