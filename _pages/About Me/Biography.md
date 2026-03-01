@@ -24,4 +24,4 @@ I’m Joseph Caraan, a Computer Engineering student at UC Riverside. My main foc
 
 - Email: [josephcaraan02@gmail.com](mailto:josephcaraan02@gmail.com)
 - GitHub: [https://github.com/jczy3](https://github.com/jczy3) 
-- LinkedIn: [www.linkedin.com/in/jcaraan025](www.linkedin.com/in/jcaraan025)
+- LinkedIn: [https://www.linkedin.com/in/jcaraan025](https://www.linkedin.com/in/jcaraan025)
