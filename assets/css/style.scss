@@ -64,27 +64,3 @@ input::-webkit-search-results-decoration{
 @import "post";
 @import "search";
 @import "darkmode";
-
-/* --- Avatar fixes (override theme) --- */
-.sidebar img,
-.sidebar .avatar img,
-.sidebar .profile img {
-  width: 140px !important;
-  height: 140px !important;
-  object-fit: cover !important;   /* prevents squish */
-  border-radius: 50% !important;
-  opacity: 1 !important;
-  filter: none !important;
-}
-
-/* Remove dark overlay layer if theme uses it */
-.sidebar::before,
-.sidebar::after,
-.sidebar .avatar::before,
-.sidebar .avatar::after,
-.sidebar .profile::before,
-.sidebar .profile::after {
-  display: none !important;
-  opacity: 0 !important;
-  background: none !important;
-}
