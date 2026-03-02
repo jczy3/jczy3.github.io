@@ -338,3 +338,9 @@ a.site-avatar:hover {
   filter: none !important;
   opacity: 1 !important;
 }
+
+
+/* Always show profile picture regardless of nav state */
+.side-banner .site-avatar {
+  display: block !important;
+}
