@@ -323,3 +323,17 @@
 }
 
 }
+
+/* Fix: Remove dark overlay on profile picture */
+#sidebar a[href="/"]::after,
+.profile_img_wrap::after,
+a.profile_link::after {
+  display: none !important;
+}
+
+/* Also remove any filter/brightness effect */
+#sidebar a[href="/"] img,
+.profile_img {
+  filter: none !important;
+  opacity: 1 !important;
+}
