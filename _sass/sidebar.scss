@@ -46,19 +46,23 @@
 
 .site-avatar {
   img {
-    display:none;
-    width:9rem;
-    aspect-ratio:1;
-    border-radius:50%;
-    outline:4.5rem solid rgba(64,64,64,0.5);
-    outline-offset:-4.5rem;
-    transition:.3s;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    /* REMOVE dark overlay completely */
+    outline: none;
+    outline-offset: 0;
+
+    /* Optional clean look */
+    border: 4px solid transparent;
+    transition: 0.3s ease;
 
     &:hover {
-      outline:4px solid orange;
-      outline-offset:8px;
+      border-color: #f4b400; /* subtle highlight */
     }
   }
+}
 
   img + img { border-radius:50%; }
 }
