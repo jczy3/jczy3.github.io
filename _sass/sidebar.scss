@@ -49,19 +49,17 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-
-    /* REMOVE dark overlay completely */
     outline: none;
     outline-offset: 0;
-
-    /* Optional clean look */
     border: 4px solid transparent;
     transition: 0.3s ease;
 
     &:hover {
-      border-color: #f4b400; /* subtle highlight */
+      border-color: #f4b400;
     }
   }
+
+  img + img { border-radius: 50%; }
 }
 
   img + img { border-radius:50%; }
@@ -324,16 +322,19 @@
 
 }
 
-/* Fix: Remove dark overlay on profile picture */
-#sidebar a[href="/"]::after,
-.profile_img_wrap::after,
-a.profile_link::after {
+/* Remove dark overlay on profile picture */
+.site-avatar::after,
+.site-avatar::before {
   display: none !important;
+  background: none !important;
 }
 
-/* Also remove any filter/brightness effect */
-#sidebar a[href="/"] img,
-.profile_img {
+a.site-avatar:hover {
+  background: none !important;
+  opacity: 1 !important;
+}
+
+.site-avatar img {
   filter: none !important;
   opacity: 1 !important;
 }
