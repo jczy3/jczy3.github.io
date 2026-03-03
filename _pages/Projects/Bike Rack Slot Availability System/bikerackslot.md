@@ -32,8 +32,9 @@ This project focuses on embedded systems design and end-to-end system integratio
 
 # System Architecture
 ---
-![](assets/img/hardware_State_machine_bike.JPG)
+<img width="488" height="667" alt="image" src="https://github.com/user-attachments/assets/ac7b2ddf-ff3f-4cd3-a3a3-f85a4443e21e" />
 
 # Bike Detection
 ---
-![](assets/img/bikes.JPG)
+<img width="513" height="382" alt="image" src="https://github.com/user-attachments/assets/2509434c-df48-4a77-ad2d-634803dda57a" />
+
