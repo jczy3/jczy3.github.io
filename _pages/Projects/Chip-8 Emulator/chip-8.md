@@ -2,17 +2,17 @@
 title: "Chip-8 Emulator"
 date: "03/01/2026"
 tags: [C++, Emulation, Systems Programming, Computer Architecture, SDL, Low-Level Programming]
-thumbnail: ""
+thumbnail: "assets/img/blinky.png"
 ---
 
 # Project Description 
 ---
 A fully functional CHIP-8 emulator written in modern C++ (C++20), implementing the complete virtual machine architecture.
 This emulator can:
-* Load and execute original CHIP-8 ROMs
-* Run classic games like Pong, Tetris, and Space Invaders
-* Render 64x32 monochrome graphics in real time
-* Accurately emulate timers and sprite collision behavior
+Load and execute original CHIP-8 ROMs
+Run classic games like Pong, Tetris, and Space Invaders
+Render 64x32 monochrome graphics in real time
+Accurately emulate timers and sprite collision behavior
 
 A ROM is a binary program file containing CHIP-8 instructions. The emulator loads the ROM into memory at address 0x200 and begins executing instructions through a fetch–decode–execute cycle.
 
