@@ -1,5 +1,12 @@
-# Chip-8 Emulator
+---
+title: "Chip-8 Emulator"
+date: "03/01/2026"
+tags: [C++, Emulation, Systems Programming, Computer Architecture, SDL, Low-Level Programming]
+thumbnail: ""
+---
 
+# Project Description 
+---
 A fully functional CHIP-8 emulator written in modern C++ (C++20), implementing the complete virtual machine architecture.
 
 This emulator can:
