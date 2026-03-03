@@ -1,0 +1,39 @@
+---
+title: "Bike Rack Slot Availability System"
+date: "09/13/2025"
+tags: [Embedded Systems, Embedded C, ESP32, Python, Computer Vision, HTTP, Cloud Computing, Systems Integration]
+thumbnail: "assets/img/bikerack.png"
+---
+
+# Project Description
+---
+A real-time Bike Rack Slot Availability System built using embedded hardware and cloud infrastructure to monitor and report open bike parking spaces.
+
+This system can:
+Capture live images using an ESP32-CAM
+Process images to detect available bike rack slots
+Transmit data via HTTP to cloud infrastructure
+Store and manage images using Google Cloud
+Provide real-time slot availability updates
+
+The system uses an ESP32-CAM to periodically capture images of a bike rack. Due to limited onboard memory and computing power constraints of the microcontroller, it was not feasible to store or process images locally on the MCU. 
+
+To address these hardware limitations, the system architecture was designed to offload image storage and processing to the cloud. Captured images are transmitted via HTTP to Google Cloud, where they are stored and processed using a Python-based image processing pipeline to determine occupancy.
+
+This project focuses on embedded systems design and end-to-end system integration:
+📷 ESP32-CAM image capture and device configuration  
+🌐 HTTP-based data transmission  
+☁️ Google Cloud storage integration  
+🧠 Image processing pipeline for occupancy detection  
+🔌 Embedded C firmware development  
+🐍 Python backend processing  
+🔁 Real-time data flow from edge device to cloud  
+🛠 Version control and Agile development using Git  
+
+# System Architecture
+---
+![](assets/img/hardware_State_machine_bike.JPG)
+
+# Bike Detection
+---
+![](assets/img/bikes.JPG)
