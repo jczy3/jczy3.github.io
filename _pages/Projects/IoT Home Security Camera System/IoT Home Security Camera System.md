@@ -28,6 +28,3 @@ This project emphasizes embedded systems design and real-time communication:
 🧠 Memory-aware embedded firmware design  
 🔁 Edge-to-cloud communication architecture  
 🛠 Git-based version control and modular code organization  
-
-# System Architecture
----
