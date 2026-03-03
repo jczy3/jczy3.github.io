@@ -1,6 +1,6 @@
 ---
 title: "IoT Home Security Camera System"
-date: "12/23/2025"
+date: "2025-12-23"
 tags: [Embedded Systems, ESP32, FreeRTOS, MQTT, Computer Vision, IoT, Networking]
 thumbnail: "assets/img/securitycam.png"
 ---
