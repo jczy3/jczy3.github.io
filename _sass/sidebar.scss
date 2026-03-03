@@ -46,23 +46,23 @@
 
 .site-avatar {
   img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    outline: none;
-    outline-offset: 0;
-    border: 4px solid transparent;
-    transition: 0.3s ease;
+    display:none;
+    width: 11rem;
+    aspect-ratio: 1 / 1;
+    height: auto;          
+    object-fit: cover;    
+    object-position: center;
+    border-radius: 50%;    
+    outline:none;
+    outline-offset:0;
+    transition:.3s;
 
     &:hover {
-      border-color: #f4b400;
+      outline:4px solid orange;
+      outline-offset:8px;
     }
   }
-
-  img + img { border-radius: 50%; }
-}
-
-  img + img { border-radius:50%; }
+ 
 }
 
 .site-tab {
@@ -320,27 +320,4 @@
   margin-left:calc(#{$contentwd} + (100vw - #{$contentwd})/2);
 }
 
-}
-
-/* Remove dark overlay on profile picture */
-.site-avatar::after,
-.site-avatar::before {
-  display: none !important;
-  background: none !important;
-}
-
-a.site-avatar:hover {
-  background: none !important;
-  opacity: 1 !important;
-}
-
-.site-avatar img {
-  filter: none !important;
-  opacity: 1 !important;
-}
-
-
-/* Always show profile picture regardless of nav state */
-.side-banner .site-avatar {
-  display: block !important;
 }
