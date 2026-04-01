@@ -21,7 +21,7 @@ MOSI is the data line in which the master transmits data and the slave receives 
 
 MISO is the data line in which the master receives data and the slave transmits data.
 
-SS is the slave select pin, which allows the master to select an individual slave for communication.
+SS is the slave select pin, which allows the master to select an individual slave for communication. Ensure that the master is set as an output pin for SS, and the slave/s are set as input pin/s.
 
 # SPI vs. other communication protocols
 ---
@@ -71,4 +71,12 @@ The frequency of the SCLK is determined by the baud rate generator.
 There are also internal Rx and Tx buffers that are accessed by the APB bus. When the shift register receives complete data via MISO (lets say, DFF is 8 bits), the byte will be moved to the Rx buffer which triggers an interrupt, and then the data can be read in firmware. Similarly, data is written to the Tx buffer in firmware and when the shift register is free, the data is loaded into the shift register and transmission begins via MOSI. Whenever Tx buffer is empty, an interrupt occurs so the application can load data.
 
 So, there is an interrupt when the Tx buffer is empty (load data) and an interrupt when the Rx buffer is full (receive data).
+
+# Software slave management
+---
+For 1 master and 1 slave: You don't need to use the NSS pin of the master and slave in SSM. If you don't want to use SSM, you can connect NSS pin of the master to the NSS pin of the slave.
+
+For 1 master and multiple slaves: You can't use SSM. You can't use the NSS pin of the master to connect to the NSS pin of any of the slaves, the master must use its GPIO pins to control the NSS pins of the slaves (ground the I/O pin of the slave it wishes to use).
+
+
 
