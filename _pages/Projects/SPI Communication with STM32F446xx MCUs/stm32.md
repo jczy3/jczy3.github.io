@@ -58,3 +58,17 @@ After one clock cycle, master transmits B0 via MOSI to the slave and receives A0
 After seven more clock cycles, B7-B0 is transmitted from master to the slave (MOSI), and A7-A0 is transmitted from the slave to the master (MISO).
 
 ![](/assets/img/SPIex3.png)
+
+# What does the hardware look like?
+---
+Block Diagram: 
+
+![](/assets/img/SPIBlockdia.JPG)
+
+For STM32 MCUs, the shift register can hold up to 16 bits.
+The frequency of the SCLK is determined by the baud rate generator.
+
+There are also internal Rx and Tx buffers that are accessed by the APB bus. When the shift register receives complete data via MISO (lets say, DFF is 8 bits), the byte will be moved to the Rx buffer which triggers an interrupt, and then the data can be read in firmware. Similarly, data is written to the Tx buffer in firmware and when the shift register is free, the data is loaded into the shift register and transmission begins via MOSI. Whenever Tx buffer is empty, an interrupt occurs so the application can load data.
+
+So, there is an interrupt when the Tx buffer is empty (load data) and an interrupt when the Rx buffer is full (receive data).
+
