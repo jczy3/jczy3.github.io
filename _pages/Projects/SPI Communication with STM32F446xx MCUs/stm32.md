@@ -17,7 +17,7 @@ SPI uses 4 GPIO pins: SCLK, MOSI, MISO, and SS.
 
 SCLK is the Serial Clock pin, which determines when the master is to receive/transmit data. This is an output pin for the master and input pin/s for the slave/s, as the SCLK is produced by the master.
 
-MOSI is the data line in which the master transmit data and the slave receives data.
+MOSI is the data line in which the master transmits data and the slave receives data.
 
 MISO is the data line in which the master receives data and the slave transmits data.
 
@@ -29,4 +29,19 @@ SPI in comparison to most other protcols, is designed to operate within a short 
 
 Just a reminder, frequency / bandwith measures the capacity (pipe size). Bits per second measures the throughput (flow rate).
 
-# 
+# Important considerations with configuring SPI
+---
+Both master and slave devices must support the SPI interface. Whenever the master wants to communicate with a slave, the master must select the slave. Via the SS pin, the master pulls the SS pin of the slave to ground (0). If this is not done, the data lines (MOSI and MISO) will be in high impedance state, and the slave will not respond to any data sent by the master.
+
+# SPI bus configurations
+---
+By default, SPI is a full duplex communication protocol. Shift registers of the master and slave are linked between MOSI and MISO pins. Data is shifted synchronously on the SCLK edges provided by the master. The master transmits data to the slave via the MOSI line and receives data from the slave via the MISO line.
+
+Half duplex configuration: A single cross connection line links the shift registers of the master and slave together. The data is synchronously shifted between the shift registers on the SCLK edges in the transfer direction selected reciprocally by both master and slave (one direction at a time). MOSI of master is connected to the MISO of slave. This must be configured in software: when master is in Tx mode, slave is in Rx mode. When master is in Rx mode, slave is in Tx mode.
+
+Simplex configuration: Tx only / Rx only. The application ignores the information on the unused pin.
+
+# SPI under the hood
+---
+SPI communication is based on shift registers. After a clock cycle, the master shifts its LSB to the slave's MSB via MOSI, and the slave simulataneously shifts its LSB to the master's MSB via MISO.
+
