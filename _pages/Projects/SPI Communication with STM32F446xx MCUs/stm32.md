@@ -44,8 +44,17 @@ Simplex configuration: Tx only / Rx only. The application ignores the informatio
 # SPI under the hood
 ---
 SPI communication is based on shift registers. After a clock cycle, the master shifts its LSB to the slave's MSB via MOSI, and the slave simulataneously shifts its LSB to the master's MSB via MISO.
-[1] HV_Precharge_Check.SchDoc
+
+I've provided a visualization on how SPI communication uses shift registers for communication between master and slave. Note that in these images, the device on the left is the master (with contents B7-B0 in its shift register) and the device on the right is the slave (with contents A7-A0 in its shift register).
+
+This is what the shift registers look like before a shift.
+
 ![](/assets/img/SPIex1.png)
+
+After one clock cycle, master transmits B0 via MOSI to the slave and receives A0 via MISO from the slave.
+
 ![](/assets/img/SPIex2.png)
 
+After seven more clock cycles, B7-B0 is transmitted from master to the slave (MOSI), and A7-A0 is transmitted from the slave to the master (MISO).
 
+![](/assets/img/SPIex3.png)
