@@ -44,6 +44,8 @@ Simplex configuration: Tx only / Rx only. The application ignores the informatio
 # SPI under the hood
 ---
 SPI communication is based on shift registers. After a clock cycle, the master shifts its LSB to the slave's MSB via MOSI, and the slave simulataneously shifts its LSB to the master's MSB via MISO.
+[1] HV_Precharge_Check.SchDoc
+![](assets/img/SPIex1.png)
 <img width="2013" height="674" alt="image" src="https://github.com/user-attachments/assets/47f65dda-4f04-469b-9faa-2b8dac0c0f08" />
 <img width="2249" height="742" alt="image" src="https://github.com/user-attachments/assets/79c24744-ad93-4d0b-9ab2-fb6ed2bebc5b" />
 
