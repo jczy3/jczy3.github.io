@@ -79,6 +79,7 @@ For 1 master and 1 slave: You don't need to use the NSS pin of the master and sl
 For 1 master and multiple slaves: You can't use SSM. You can't use the NSS pin of the master to connect to the NSS pin of any of the slaves, the master must use its GPIO pins to control the NSS pins of the slaves (ground the I/O pin of the slave it wishes to use).
 
 # SPI Communication Format
+---
 
 There are 3 important considerations for SPI's format, CPHA (clock phase bit), CPOL (clock polarity bit), and DFF (data frame format, either 8 or 16 bits).
 
@@ -89,6 +90,7 @@ By default, CPHA = 0. CPHA being 0 corresponds to data being sampled on the lead
 There are effectively 4 different modes for SPI, changing CPHA and CPOL (changing DFF is trivial).
 
 # Which bus is my SPI peripheral connected to? 
+---
 
 Bus: a shared communication pathway that transfers data, addresses, and control signals between components like the CPU, memory, and peripherals.
 
@@ -101,3 +103,7 @@ SPI2 and SPI3 are hanging on the APB1 bus.
 SPI1 and SPI4 are hanging on the APB2 bus.
 
 ![](/assets/img/STM32Blog/APB1.png)
+
+# What is the frequency of SCLK?
+
+You first need to understand the speed of the bus in which the SPI peripheral is connected to and what clock source is being used. For our purposes, when using the internal RC oscillator clock (HSI) as the system clock, its frequency is 16 MHz. From there, you can adjust the APBx prescaler and the SPIx peripheral prescaler to adjust the frequency of the SCLK. The minimum prescale value for the APBx prescaler is 1, and the minimum prescale value for the SPIx peripheral is 2, so the max frequency of SCLK using the HSI is 8 MHz.
