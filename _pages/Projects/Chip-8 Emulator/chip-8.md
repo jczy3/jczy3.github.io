@@ -2,7 +2,7 @@
 title: "Chip-8 Emulator"
 date: "2026-03-01"
 tags: [C++, Emulation, Systems Programming, Computer Architecture, SDL, Low-Level Programming]
-thumbnail: "assets/img/blinky.png"
+thumbnail: "/assets/img/blinky.png"
 ---
 
 # Project Description 
