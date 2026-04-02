@@ -153,4 +153,4 @@ I have also provided a sample program to ensure that the send data function is w
 
 ![](/assets/img/STM32Blog/LA.PNG)
 
-11 bytes of data were sent, corresponding to the 11 characters in "Hello world" when loaded into the Tx buffer and sent via the shift register.
+When using the logic analyzer on the SCLK (white signal) and the MOSI (brown signal) pins, we see that 11 bytes of data were sent, corresponding to the 11 characters in "Hello world" when loaded into the Tx buffer and sent via the shift register.
