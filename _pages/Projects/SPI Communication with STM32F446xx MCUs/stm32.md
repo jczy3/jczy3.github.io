@@ -107,3 +107,29 @@ SPI1 and SPI4 are hanging on the APB2 bus.
 # What is the frequency of SCLK?
 
 You first need to understand the speed of the bus in which the SPI peripheral is connected to and what clock source is being used. For our purposes, when using the internal RC oscillator clock (HSI) as the system clock, its frequency is 16 MHz. From there, you can adjust the APBx prescaler and the SPIx peripheral prescaler to adjust the frequency of the SCLK. The minimum prescale value for the APBx prescaler is 1, and the minimum prescale value for the SPIx peripheral is 2, so the max frequency of SCLK using the HSI is 8 MHz.
+
+# Where can I find the registers / necessary addresses for this SPI peripheral?
+
+For this, we need to consult the reference manual.
+
+SPI register information can be found on section 26.7 of the manual.
+
+![](/assets/img/STM32Blog/spi_registers.PNG)
+
+Each register under 26.7 will contain the bit fields for that specific register, as well as what the register is configuring under a specific bit.
+
+![](/assets/img/STM32Blog/bitfield.PNG)
+
+To enable / disable the peripheral clocks of SPI, you will need to consult the APBxENR RCC register.
+
+Let's take SPI1 as an example:
+
+![](/assets/img/STM32Blog/RCC1.PNG)
+
+![](/assets/img/STM32Blog/rcc2.PNG)
+
+To enable the peripheral clock of SPI1, you must set bit 12 of the RCC_APB2ENR register to high. To disable the peripheral clock of SPI1, you must set bit 12 of the RCC_APB2ENR register to low.
+
+# What are common issues when setting up SPI?
+
+The most common issue is forgetting to enable the peripheral clock of the respective GPIO port that the SPI peripheral is using, or the peripheral clock of the SPI peripheral itself. If your program isn't working, ensure that these bits (under RCC -> APBxENR) are being set when observing the registers in debug mode.
