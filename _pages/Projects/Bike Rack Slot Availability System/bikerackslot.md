@@ -2,7 +2,7 @@
 title: "Bike Rack Slot Availability System"
 date: "2025-09-13"
 tags: [Embedded Systems, Embedded C, ESP32, Python, Computer Vision, HTTP, Cloud Computing, Systems Integration]
-thumbnail: "assets/img/bikes.JPG"
+thumbnail: "/assets/img/bikes.JPG"
 ---
 
 # Project Description
