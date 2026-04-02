@@ -90,4 +90,14 @@ There are effectively 4 different modes for SPI, changing CPHA and CPOL (changin
 
 # Which bus are my SPI peripherals connected to? 
 
-We must refer to the reference manual to find this. 
+Bus: a shared communication pathway that transfers data, addresses, and control signals between components like the CPU, memory, and peripherals.
+
+We must refer to the reference manual to find this information. 
+
+SPI2 and SPI3 are hanging on the APB1 bus.
+
+![](/assets/img/STM32Blog/APB2.png)
+
+SPI1 and SPI4 are hanging on the APB2 bus.
+
+![](/assets/img/STM32Blog/APB1.png)
