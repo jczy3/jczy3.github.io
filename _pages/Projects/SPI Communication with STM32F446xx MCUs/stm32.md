@@ -87,3 +87,7 @@ By default, CPOL = 0. CPOL being 0 corresponds to a low level idle state. CPOL b
 By default, CPHA = 0. CPHA being 0 corresponds to data being sampled on the lead edge of the clock. CPHA being 1 corresponds to data being sampled on the trailing edge of the clock.
 
 There are effectively 4 different modes for SPI, changing CPHA and CPOL (changing DFF is trivial).
+
+# Which bus are my SPI peripherals connected to? 
+
+We must refer to the reference manual to find this. 
