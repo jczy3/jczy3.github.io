@@ -2,7 +2,7 @@
 title: "SPI Communication with STM32F446xx MCUs"
 date: "2026-04-01"
 tags: [Embedded Systems, STM32, Communication Protocols, SPI]
-thumbnail: "assets/img/stm32.jpg"
+thumbnail: "/assets/img/stm32.jpg"
 ---
 
 # Overview
@@ -78,5 +78,12 @@ For 1 master and 1 slave: You don't need to use the NSS pin of the master and sl
 
 For 1 master and multiple slaves: You can't use SSM. You can't use the NSS pin of the master to connect to the NSS pin of any of the slaves, the master must use its GPIO pins to control the NSS pins of the slaves (ground the I/O pin of the slave it wishes to use).
 
+# SPI Communication Format
 
+There are 3 important considerations for SPI's format, CPHA (clock phase bit), CPOL (clock polarity bit), and DFF (data frame format, either 8 or 16 bits).
 
+By default, CPOL = 0. CPOL being 0 corresponds to a low level idle state. CPOL being 1 corresponds to a high level idle state.
+
+By default, CPHA = 0. CPHA being 0 corresponds to data being sampled on the lead edge of the clock. CPHA being 1 corresponds to data being sampled on the trailing edge of the clock.
+
+There are effectively 4 different modes for SPI, changing CPHA and CPOL (changing DFF is trivial).
