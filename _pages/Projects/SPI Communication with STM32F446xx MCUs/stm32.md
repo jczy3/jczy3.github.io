@@ -88,7 +88,7 @@ By default, CPHA = 0. CPHA being 0 corresponds to data being sampled on the lead
 
 There are effectively 4 different modes for SPI, changing CPHA and CPOL (changing DFF is trivial).
 
-# Which bus are my SPI peripherals connected to? 
+# Which bus is my SPI peripheral connected to? 
 
 Bus: a shared communication pathway that transfers data, addresses, and control signals between components like the CPU, memory, and peripherals.
 
