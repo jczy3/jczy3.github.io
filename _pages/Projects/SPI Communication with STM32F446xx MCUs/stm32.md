@@ -7,7 +7,7 @@ thumbnail: "/assets/img/stm32.jpg"
 
 # Overview
 ---
-Welcome to my first blog! Here, I will teach you how SPI communication works with STM32F446XX microcontrollers. By no means am I an expert, and I am a proponent in continuous improvement. If you see something here that is questionable or outright wrong, feel free to leave a comment for feedback!
+Welcome to my first blog! Here, I will teach you how SPI communication works with STM32F446XX microcontrollers.
 
 Lets start with, what exactly is SPI? Why should we care?
 
