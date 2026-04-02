@@ -105,10 +105,12 @@ SPI1 and SPI4 are hanging on the APB2 bus.
 ![](/assets/img/STM32Blog/APB1.png)
 
 # What is the frequency of SCLK?
+---
 
 You first need to understand the speed of the bus in which the SPI peripheral is connected to and what clock source is being used. For our purposes, when using the internal RC oscillator clock (HSI) as the system clock, its frequency is 16 MHz. From there, you can adjust the APBx prescaler and the SPIx peripheral prescaler to adjust the frequency of the SCLK. The minimum prescale value for the APBx prescaler is 1, and the minimum prescale value for the SPIx peripheral is 2, so the max frequency of SCLK using the HSI is 8 MHz.
 
 # Where can I find the registers / necessary addresses for this SPI peripheral?
+---
 
 For this, we need to consult the reference manual.
 
@@ -131,5 +133,18 @@ Let's take SPI1 as an example:
 To enable the peripheral clock of SPI1, you must set bit 12 of the RCC_APB2ENR register to high. To disable the peripheral clock of SPI1, you must set bit 12 of the RCC_APB2ENR register to low.
 
 # What are common issues when setting up SPI?
+---
 
 The most common issue is forgetting to enable the peripheral clock of the respective GPIO port that the SPI peripheral is using, or the peripheral clock of the SPI peripheral itself. If your program isn't working, ensure that these bits (under RCC -> APBxENR) are being set when observing the registers in debug mode.
+
+# Implementation
+---
+I have implemented the SPI driver for the STM32 F446RE MCU [here](https://github.com/jczy3/STM32F446RE_Drivers). 
+
+I have also provided a sample program to ensure that the send data function is working.
+
+
+# Closing
+---
+
+Thank you for taking the time to read my blog!
