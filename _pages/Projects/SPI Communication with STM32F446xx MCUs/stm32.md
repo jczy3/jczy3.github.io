@@ -161,7 +161,7 @@ When using the logic analyzer on the MOSI and SCLK pins, we see that 11 bytes of
 
 I programmed a simple application using a button to send a message via SPI from an STM32 F446RE master to an Arudino slave.
 
-[STM32 code](https://github.com/jczy3/STM32F446RE_Drivers/blob/main/sample_apps/SPI_txonly_arduino.c)
+[STM32 code](https://github.com/jczy3/STM32F446RE_Drivers/blob/main/sample_apps/SPI_txonly_arduino/SPI_txonly_arduino.c)
 
 [Arduino sketch](https://github.com/niekiran/MasteringMCU/blob/master/Resources/Arduino/spi/001SPISlaveRxString/001SPISlaveRxString.ino)
 
