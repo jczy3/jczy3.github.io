@@ -149,8 +149,12 @@ The most common issue is forgetting to enable the peripheral clock of the respec
 ---
 I have implemented the SPI driver for the STM32 F446RE MCU [here](https://github.com/jczy3/STM32F446RE_Drivers). 
 
-I have also provided a sample program to ensure that the send data function is working.
+# Sending "Hello world"
 
-![](/assets/img/STM32Blog/LA.PNG)
+![](/assets/img/STM32Blog/helloworld.PNG)
 
-When using the logic analyzer on the SCLK (white signal) and the MOSI (brown signal) pins, we see that 11 bytes of data were sent, corresponding to the 11 characters in "Hello world" when loaded into the Tx buffer and sent via the shift register.
+When using the logic analyzer on the MOSI and SCLK pins, we see that 11 bytes of data were sent, corresponding to the 11 characters in "Hello world" when loaded into the Tx buffer and sent via the shift register.
+
+# STM32 Master and Arduino Slave communication
+
+
