@@ -145,6 +145,8 @@ To enable the peripheral clock of SPI1, you must set bit 12 of the RCC_APB2ENR r
 
 The most common issue is forgetting to enable the peripheral clock of the respective GPIO port that the SPI peripheral is using, or the peripheral clock of the SPI peripheral itself. If your program isn't working, ensure that these bits (under RCC -> APBxENR) are being set when observing the registers in debug mode.
 
+Also, make sure that after data is sent that the SPI peripheral is disabled. To do this, wait until the SPI flag is not busy (BSY bit of the status register) before disabling.
+
 # Implementation
 ---
 I have implemented the SPI driver for the STM32 F446RE MCU [here](https://github.com/jczy3/STM32F446RE_Drivers). 
@@ -157,4 +159,20 @@ When using the logic analyzer on the MOSI and SCLK pins, we see that 11 bytes of
 
 # STM32 Master and Arduino Slave communication
 
+I programmed a simple application using a button to send a message via SPI from an STM32 F446RE master to an Arudino slave.
+
+[STM32 code](https://github.com/jczy3/STM32F446RE_Drivers/blob/main/sample_apps/SPI_txonly_arduino.c)
+
+[Arduino sketch](https://github.com/niekiran/MasteringMCU/blob/master/Resources/Arduino/spi/001SPISlaveRxString/001SPISlaveRxString.ino)
+
+Here is the logic / protocol analyzer decoding the length of the message and the message itself (before being sent to Arduino).
+
+![](/assets/img/STM32Blog/221LA.PNG)
+![](/assets/img/STM32Blog/msgLA.PNG)
+
+Verification by the Arduino that the length of the message and the message itself is sent.
+
+![](/assets/img/STM32Blog/arduinoproof.PNG)
+
+As you can see, the custom message that I created was 221 bytes long. When changing the SPI settings in the Logic Analyzer software to ASCII, I am able to decode the message.
 
