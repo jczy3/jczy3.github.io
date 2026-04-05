@@ -159,7 +159,7 @@ When using the logic analyzer on the MOSI and SCLK pins, we see that 11 bytes of
 
 # STM32 Master and Arduino Slave communication
 
-I programmed a simple application using a button to send a message via SPI from an STM32 F446RE master to an Arudino slave.
+I programmed a simple application using a button to send a message via SPI from an STM32 F446RE master to an Arudino slave (transmission from master to slave only). Please note that you need a bidirectional logic level converter when interfacing between an STM32 and an Arduino, as their logic levels are incompatiable if you were to connect pins directly to each other.
 
 [STM32 code](https://github.com/jczy3/STM32F446RE_Drivers/blob/main/sample_apps/SPI_txonly_arduino/SPI_txonly_arduino.c)
 
@@ -176,3 +176,26 @@ Verification by the Arduino that the length of the message and the message itsel
 
 As you can see, the custom message that I created was 221 bytes long. When changing the SPI settings in the Logic Analyzer software to ASCII, I am able to decode the message.
 
+# Command handling with Arduino Slave
+
+Here, I program an application interfacing an STM32 F446RE master and an Arudino slave, for the Arduino slave to handle commands sent by the STM32 master.
+
+[STM32 code](https://github.com/jczy3/STM32F446RE_Drivers/blob/main/sample_apps/SPI_txonly_arduino/SPI_txonly_arduino.c)
+
+[Arduino sketch](https://github.com/niekiran/MasteringMCU/blob/master/Resources/Arduino/spi/001SPISlaveRxString/001SPISlaveRxString.ino)
+
+Lets analyze sending the LED control command (COMMAND_LED_CTRL).
+
+![](/assets/img/STM32Blog/FD0.png)
+
+![](/assets/img/STM32Blog/FD1.png)
+
+In green, we can see that the command 0x50 was sent via MOSI, which corresponds to COMMAND_LED_CTRL. Note that the dummy read is also reflected in the trace (in red) via the MISO pin to clear garbage data in the Rx buffer sent by the Arduino (because whenever you write a byte, you receive a byte).
+
+![](/assets/img/STM32Blog/FD2.png)
+
+In green, we can see that the ACK byte 0xF5 was received via MISO (acknowledging that data was received succcesfully). Note that the dummy write is also reflected in the trace (in red) via the MOSI pin to clear the Tx buffer (because whenever you read a byte, you write a byte).
+
+![](/assets/img/STM32Blog/FD3.png)
+
+Finally, we send the arugments to the arudino, setting PIN9 (0x09) to HIGH (0x01).
