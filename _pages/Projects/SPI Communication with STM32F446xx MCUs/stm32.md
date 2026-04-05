@@ -2,7 +2,7 @@
 title: "SPI Communication with STM32F446xx MCUs"
 date: "2026-04-01"
 tags: [Embedded Systems, STM32, Communication Protocols, SPI]
-thumbnail: "/assets/img/stm32.jpg"
+thumbnail: "/assets/img/STM32Blog/projectstm32.jpg"
 ---
 
 # Overview
