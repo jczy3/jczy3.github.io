@@ -190,11 +190,11 @@ Lets analyze sending the LED control command (COMMAND_LED_CTRL).
 
 ![](/assets/img/STM32Blog/FD1.png)
 
-In green, we can see that the command 0x50 was sent via MOSI, which corresponds to COMMAND_LED_CTRL. Note that the dummy read is also reflected in the trace (in red) via the MISO pin to clear garbage data in the Rx buffer sent by the Arduino (because whenever you write a byte, you receive a byte).
+In green, we can see that the command 0x50 was sent via MOSI, which corresponds to COMMAND_LED_CTRL. Note that the dummy read is also reflected in the trace (in red) via the MISO pin to clear garbage data in the Rx buffer sent by the Arduino, clearing the RXNE (because whenever you write a byte, you receive a byte).
 
 ![](/assets/img/STM32Blog/FD2.png)
 
-In green, we can see that the ACK byte 0xF5 was received via MISO (acknowledging that data was received succcesfully). Note that the dummy write is also reflected in the trace (in red) via the MOSI pin to clear the Tx buffer (because whenever you read a byte, you write a byte).
+In green, we can see that the ACK byte 0xF5 was received via MISO (acknowledging that data was received succcesfully). Note that the dummy write is also reflected in the trace (in red) via the MOSI pin to fetch the response from the slave (because whenever you read a byte, you write a byte).
 
 ![](/assets/img/STM32Blog/FD3.png)
 
