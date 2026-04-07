@@ -2,7 +2,7 @@
 title: About Me
 bookmark: true
 tags: [Embedded Systems, C/C++, Real-Time Systems, Firmware, Low-Level Programming, Control Systems, Mission-Critical Systems]
-thumbnail: /assets/img/joseph.JPG
+thumbnail: /assets/img/JosephCaraan.jpg
 ---
 # Hello, I'm Joseph Caraan
 - [My Resume](https://drive.google.com/file/d/142xJGMz2l8p7ndxxjNEzfHGYxuEutA2n/view?usp=sharing)
