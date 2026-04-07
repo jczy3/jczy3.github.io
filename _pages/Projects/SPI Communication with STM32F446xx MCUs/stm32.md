@@ -51,11 +51,11 @@ This is what the shift registers look like before a shift.
 
 ![](/assets/img/SPIex1.png)
 
-After one clock cycle, master transmits B0 via MOSI to the slave and receives A0 via MISO from the slave.
+After one clock cycle, master transmits A0 via MOSI to the slave and receives B0 via MISO from the slave.
 
 ![](/assets/img/SPIex2.png)
 
-After seven more clock cycles, B7-B0 is transmitted from master to the slave (MOSI), and A7-A0 is transmitted from the slave to the master (MISO).
+After seven more clock cycles, A7-A0 is transmitted from master to the slave (MOSI), and B7-B0 is transmitted from the slave to the master (MISO).
 
 ![](/assets/img/SPIex3.png)
 
