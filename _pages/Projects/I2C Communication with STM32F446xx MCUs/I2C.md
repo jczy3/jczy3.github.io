@@ -1,6 +1,6 @@
 ---
 title: "I2C Communication with STM32F446xx MCUs"
-date: "2026-27-04"
+date: "2026-04-27"
 tags: [Embedded Systems, STM32, Communication Protocols, I2C, Driver Development]
 thumbnail: "/assets/img/STM32Blog/projectstm32.jpg"
 ---
@@ -11,7 +11,6 @@ Hello! Here, I will teach you how I2C communication works with STM32F446XX micro
 
 # What is I2C? How does it differ from SPI?
 ---
-
 It is a protocol for serial data communication betweens integrated circuits (ICs). The I2C protocol is much more complex than SPI (how data should be sent, received, how hand shaking occurs, error handling, etc.).
 
 I2C is based on dedicated specification. For STM32, the spec can be found [here.](https://www.nxp.com/docs/en/user-guide/UM10204.pdf). There is no global dedicated spec for I2C.
