@@ -86,3 +86,12 @@ The master generates ALL clock pulses, including the acknowledge ninth clock pul
 This is an example of when the NACK occurs.
 The master can generate a STOP condition to abort the transfer, or a repeated START condition to start a new transfer.
 
+# Data Validity (*)
+---
+![](/assets/img/stm32_I2CBlog/bittransfer.PNG)
+All changes of data on SDA should happen when the clock is low. Changes of data on SDA when the clock is high should ONLY happen to signify a START/STOP condition.
+The data line must be stable whenever the SCL is HIGH. (valid data)
+
+# Master and Slave communication
+---
+Repeated start is necessary so that the master doesn't allow another master to hold onto the bus. It allows to switch directions (read/write) while the master still holds onto the I2C bus.
