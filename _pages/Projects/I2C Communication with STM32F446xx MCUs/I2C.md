@@ -95,3 +95,4 @@ The data line must be stable whenever the SCL is HIGH. (valid data)
 # Master and Slave communication
 ---
 Repeated start is necessary so that the master doesn't allow another master to hold onto the bus. It allows to switch directions (read/write) while the master still holds onto the I2C bus.
+This consideration is important only for a multi master configuration. It does not matter for a single master configuration (no other master can hold onto the bus when switching directions (R/W))
